@@ -1,6 +1,6 @@
 import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
-import Preloader from '../common/PreLoader';
+import InitialLoader from '../common/InitialLoader';
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +17,7 @@ const MainLayout = () => {
   }, []);
 
   if (loading) {
-    return <Preloader />;
+    return <InitialLoader/> ;
   }
 
   return (
