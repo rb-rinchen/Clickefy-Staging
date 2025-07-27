@@ -1,27 +1,5 @@
-import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 const MiniContact = () => {
-    const nameRef = useRef(null);
-    const emailRef = useRef(null);
-    const phoneNumberRef = useRef(null);
-    const serviceRef = useRef(null);
-    const messageRef = useRef(null);
-    const dispatch=useDispatch();
-    const{loading}=useSelector(state=>state.contact);
-    const validateEmail=(email)=>{
-    String(email).toLowerCase().trim();
-     let atIndex=email.lastIndexOf("@");
-     let dotIndex=email.lastIndexOf(".");
-     let emailLen=email.length-1;
-    if(atIndex>=3&&emailLen-dotIndex>=2&&(dotIndex-1)-atIndex>=4){
-      return true;
-    }
-    else{
-      return false;
-    }                    
-  }
-
   return (
     <div className='border-gray-500 shadow shadow-black p-2 bg-white '>
         <h2 className="text-orange-500 text-lg text-bold font-bold text-center">Get Started</h2>
@@ -67,11 +45,9 @@ const MiniContact = () => {
           ></textarea>
           <button
             type="submit"
-            disabled={loading}
             className= "bg-orange-500 text-white p-1 rounded-md hover:bg-orange-700"
           >
            <span>
-                <i className="fa-solid fa-spinner animate-spin"></i> 
                 Submit
             </span> 
           </button>
